@@ -11,9 +11,9 @@ def relationship():
     data = read()
     homocide_in_relationship = {} #count
     for relationship in data['Relationship']:
-        if relationship in homocide_in_relationship:
+        if relationship in homocide_in_relationship and relationship != 'Unknown':
             homocide_in_relationship[relationship] += 1
-        else:
+        elif relationship != 'Unknown':
             homocide_in_relationship[relationship] = 1
     bar = pygal.Bar(style=DarkStyle,title='Homocide in Relationship', x_title='Relationship')
     for i in homocide_in_relationship:
