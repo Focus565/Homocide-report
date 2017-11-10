@@ -15,8 +15,8 @@ def relationship():
             homocide_in_relationship[relationship] += 1
         elif relationship != 'Unknown':
             homocide_in_relationship[relationship] = 1
-    bar = pygal.Bar(style=DarkStyle,title='Homocide in Relationship', x_title='Relationship')
+    pie_chart = pygal.Pie(style=DarkStyle,title='Homocide in Relationship', x_title='Relationship', inner_radius=.4)
     for i in homocide_in_relationship:
-        bar.add(i, homocide_in_relationship[i])#in pygal you need to add value to make each bar
-    bar.render_to_file('img/relationship.svg')#render it to file
+        pie_chart.add(i, homocide_in_relationship[i])#in pygal you need to add value to make each pie_chart
+    pie_chart.render_to_file('img/relationship.svg')#render it to file
 relationship()
