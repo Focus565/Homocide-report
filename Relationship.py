@@ -16,8 +16,8 @@ def relationship():
         elif relationship != 'Unknown':
             homocide_in_relationship[relationship] = 1
 
-        people = sorted(homocide_in_relationship, key=homocide_in_relationship.__getitem__, reverse=True)
-        num = sorted(homocide_in_relationship.values(), reverse=True)
+    people = sorted(homocide_in_relationship, key=homocide_in_relationship.__getitem__, reverse=True)
+    num = sorted(homocide_in_relationship.values(), reverse=True)
 
     pie_chart = pygal.Pie(style=DarkStyle,title='Homocide in Relationship', x_title='Relationship', inner_radius=.4)
     for i in range(len(people)):
