@@ -15,8 +15,12 @@ def weapon():
             homocide_in_weapon[weapon] += 1
         else:
             homocide_in_weapon[weapon] = 1
+
+    weapons = sorted(homocide_in_weapon, key=homocide_in_weapon.__getitem__, reverse=True)
+    numweapon = sorted(homocide_in_weapon.values(), reverse=True)
+
     pie_chart = pygal.Pie(style=DarkStyle,title='Homocide in Weapon', x_title='Weapon', inner_radius=.4)
-    for i in homocide_in_weapon:
-        pie_chart.add(i, homocide_in_weapon[i])#in pygal you need to add value to make each pie_chart
+    for i in range(len(weapons)):
+        pie_chart.add(weapons[i], numweapon[i])#in pygal you need to add value to make each pie_chart
     pie_chart.render_to_file('img/weapon.svg')#render it to file
 weapon()
