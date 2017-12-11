@@ -14,28 +14,36 @@ def year():
     years = []
     weapons = []
     gun_year = []
+    knife_year = []
+    cout_knife_year = []
+
 
     for year in data['Year']:
         homocide_in_year.append(year)
-
-
     for weapon in data['Weapon']:
         weapons.append(weapon)
-
     cout = 0
     for i in homocide_in_year:
         if weapons[cout] in ['Rifle', 'Firearm', 'Shotgun', 'Gun', 'Handgun']:
             gun_year.append(i)
         cout += 1
+    cout = 0
+    for i in homocide_in_year:
+        if weapons[cout] == 'Knife':
+            knife_year.append(i)
+        cout += 1
 
     for count in range(1980, 2015):
         years.append(gun_year.count(count))
+    for count in range(1980, 2015):
+        cout_knife_year.append(knife_year.count(count))
 
     bar = pygal.Line(style=DarkStyle,title='Homocide in year kill by firearm', \
         show_minor_x_labels=False, x_label_rotation=20)
     bar.x_labels = map(str, range(1980, 2015))
     bar.x_labels_major = ['1980', '1985', '1990', \
     '1995', '2000','2005', '2010', '2014']
-    bar.add('Year', Years)
-    bar.render_to_file('img/year_Gun.svg')
+    bar.add('Firearm', years)
+    bar.add('Knife', cout_knife_year)
+    bar.render_to_file('img/year_Weapon.svg')
 year()
