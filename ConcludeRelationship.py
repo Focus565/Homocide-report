@@ -26,8 +26,8 @@ def relationship():
     people = sorted(homocide_in_relationship, key=homocide_in_relationship.__getitem__, reverse=True)
     num = sorted(homocide_in_relationship.values(), reverse=True)
 
-    pie_chart = pygal.Pie(style=DarkStyle,title='Homocide in Relationship', x_title='Relationship', inner_radius=.4)
+    bar = pygal.Bar(style=DarkStyle,title='Homicide in Relationship', x_title='Relationship')
     for i in range(len(people)):
-        pie_chart.add(people[i], num[i])#in pygal you need to add value to make each pie_chart
-    pie_chart.render_to_file('img/ConcludeRelationship.svg')#render it to file
+        bar.add(people[i], num[i])#in pygal you need to add value to make each bar
+    bar.render_to_file('img/ConcludeRelationship.svg')#render it to file
 relationship()
