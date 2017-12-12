@@ -360,18 +360,18 @@ video-container {
       }
 
 .social{
-  height: 40px;
+  height: 50px;
 
 }
 
 .icons{
-  margin-right: 40px;
+  margin-right: 46px;
 }
 
-.social:hover{
+/* .social:hover{
   height: 46px;
 
-}
+} */
 
 .botton_nav{
   padding: 14px 14px;
@@ -392,9 +392,9 @@ video-container {
   height: 150px;
 }
 
-.social1:hover{
+/* .social1:hover{
   height: 156px;
-}
+} */
 
 #main img {
   width: 100%;
@@ -410,7 +410,7 @@ video-container {
   text-decoration: none;
 }
 
-.contact: hover{
+/* .contact: hover{
   background: #696969;
   border-radius: 6px;
   box-shadow: 0 0 20px 0 #aaaaaa;
@@ -419,7 +419,7 @@ video-container {
   font: inherit;
   transform: scale(1.05);
   transition: all .2s linear;
-}
+} */
 
 .hor-cen{
   justify-content:center;
