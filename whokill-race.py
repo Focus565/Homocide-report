@@ -47,8 +47,8 @@ def race():
     people = sorted(homocide_in_race, key=homocide_in_race.__getitem__, reverse=True)
     num = sorted(homocide_in_race.values(), reverse=True)
 
-    line = pygal.Pie(style=DarkStyle,title='Homicide compare by Race', x_title='Compare Race', inner_radius=.4, truncate_legend=-1)
+    bar = pygal.Bar(style=DarkStyle,title='Homicide compare by Race', inner_radius=.4, truncate_legend=-1)
     for i in range(len(people)):
-        line.add(people[i], num[i])#in pygal you need to add value to make each line
-    line.render_to_file('img/whokill-race.svg')#render it to file
+        bar.add(people[i], num[i])#in pygal you need to add value to make each bar
+    bar.render_to_file('img/whokill-race.svg')#render it to file
 race()
