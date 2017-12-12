@@ -67,5 +67,5 @@ def year():
     bar.add('White killed by White', white_white_year)
     bar.add('White killed by Black', white_black_year)
     bar.add('White killed by Other', white_other_year)
-    bar.render_to_file('img/year_Race.svg')
+    bar.render_to_file('docs/img/year_Race.svg')
 year()

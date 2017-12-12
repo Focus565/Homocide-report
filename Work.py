@@ -9,18 +9,18 @@ def read():
 def relationship():
     '''plot graph of relationship'''
     data = read()
-    homocide_in_relationship = {} #count
+    homicide_in_relationship = {} #count
     for relationship in data['Relationship']:
-        if relationship in homocide_in_relationship:
-            homocide_in_relationship[relationship] += 1
+        if relationship in homicide_in_relationship:
+            homicide_in_relationship[relationship] += 1
         elif relationship == 'Employee' or relationship == 'Employer':
-            homocide_in_relationship[relationship] = 1
+            homicide_in_relationship[relationship] = 1
 
-    people = sorted(homocide_in_relationship, key=homocide_in_relationship.__getitem__, reverse=True)
-    num = sorted(homocide_in_relationship.values(), reverse=True)
+    people = sorted(homicide_in_relationship, key=homicide_in_relationship.__getitem__, reverse=True)
+    num = sorted(homicide_in_relationship.values(), reverse=True)
 
-    pie_chart = pygal.Pie(style=DarkStyle,title='Homocide in Relationship', x_title='Work', inner_radius=.4)
+    pie_chart = pygal.Pie(style=DarkStyle,title='homicide in Relationship', x_title='Work', inner_radius=.4)
     for i in range(len(people)):
         pie_chart.add(people[i], num[i])#in pygal you need to add value to make each pie_chart
-    pie_chart.render_to_file('img/Work.svg')#render it to file
+    pie_chart.render_to_file('docs/img/Work.svg')#render it to file
 relationship()

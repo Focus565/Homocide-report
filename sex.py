@@ -13,5 +13,5 @@ def main():
     bar.title = 'Sex'
     for i in dic:
         bar.add(i, dic[i])
-    bar.render_to_file('img/sex.svg')
+    bar.render_to_file('docs/img/sex.svg')
 main()
