@@ -25,8 +25,8 @@ def age():
             victim_age[4] += 1
         else:
             victim_age[5] += 1
-    bar = pygal.Bar(style=DarkStyle,title='Victim Age', x_title='Victim Age')#make bar graph if you want to make other kind of graph google pygal
+    bar = pygal.Bar(style=DarkStyle,title='Victim Age', x_title='Age')#make bar graph if you want to make other kind of graph google pygal
     bar.x_labels = ('0-11', '12-20', '21-35', '36-50', '51-80', '81-100')
-    bar.add('Death Rate', victim_age)#in pygal you need to add value to make each bar
+    bar.add('Casualty', victim_age)#in pygal you need to add value to make each bar
     bar.render_to_file('img/victim_age.svg')#render it to file
 age()
