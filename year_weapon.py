@@ -74,7 +74,7 @@ def year():
     for count in range(1980, 2015):
         other_year.append(other.count(count))
 
-    bar = pygal.Line(legend_at_bottom=True,fill=True,style=DarkStyle,title='Homocide in year', \
+    bar = pygal.Line(legend_at_bottom=True,fill=True,style=DarkStyle,title='Homicide by Weapons in years', \
         show_minor_x_labels=False, x_label_rotation=20,truncate_legend=-1)
     bar.x_labels = map(str, range(1980, 2015))
     bar.x_labels_major = ['1980', '1985', '1990', \
