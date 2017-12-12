@@ -13,5 +13,5 @@ def main():
     bar.title = 'psit in %'
     for i in dic:
         bar.add(i, dic[i])
-    bar.render_to_file('img/stuff.svg')
+    bar.render_to_file('docs/img/stuff.svg')
 main()

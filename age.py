@@ -28,5 +28,5 @@ def main():
     bar.x_title = 'Age'
     bar.x_labels = ('0-11', '12-20', '21-35', '36-50', '51-80', '81-100')
     bar.add('Incident', perpetrator_age)
-    bar.render_to_file('img/age.svg')
+    bar.render_to_file('docs/img/age.svg')
 main()

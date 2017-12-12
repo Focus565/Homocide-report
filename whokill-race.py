@@ -9,7 +9,7 @@ def read():
 def race():
     '''plot graph of race'''
     data = read()
-    homocide_in_race = {} #count
+    homicide_in_race = {} #count
     data[(data['Victim Race'] != 'Unknown') | (data['Perpetrator Race'] != 'Unknown')]
 
     data[(data['Victim Race'] == 'Asian/Pacific Islander') & (data['Perpetrator Race'] == 'Asian/Pacific Islander')] = 'Asian/Pacific Islander kill Asian/Pacific Islander'
@@ -33,22 +33,22 @@ def race():
     data[(data['Victim Race'] == 'Native American/Alaska Native') & (data['Perpetrator Race'] == 'Native American/Alaska Native')] = 'Native American/Alaska Native kill Native American/Alaska Native'
 
     for i in data['Victim Race']:
-        if i in homocide_in_race:
-            homocide_in_race[i] += 1
+        if i in homicide_in_race:
+            homicide_in_race[i] += 1
         else:
-            homocide_in_race[i] = 1
+            homicide_in_race[i] = 1
 
-    del homocide_in_race['Asian/Pacific Islander']
-    del homocide_in_race['Black']
-    del homocide_in_race['White']
-    del homocide_in_race['Native American/Alaska Native']
-    del homocide_in_race['Unknown']
+    del homicide_in_race['Asian/Pacific Islander']
+    del homicide_in_race['Black']
+    del homicide_in_race['White']
+    del homicide_in_race['Native American/Alaska Native']
+    del homicide_in_race['Unknown']
     
-    people = sorted(homocide_in_race, key=homocide_in_race.__getitem__, reverse=True)
-    num = sorted(homocide_in_race.values(), reverse=True)
+    people = sorted(homicide_in_race, key=homicide_in_race.__getitem__, reverse=True)
+    num = sorted(homicide_in_race.values(), reverse=True)
 
     bar = pygal.Bar(style=DarkStyle,title='Homicide compare by Race', inner_radius=.4, truncate_legend=-1)
     for i in range(len(people)):
         bar.add(people[i], num[i])#in pygal you need to add value to make each bar
-    bar.render_to_file('img/whokill-race.svg')#render it to file
+    bar.render_to_file('docs/img/whokill-race.svg')#render it to file
 race()

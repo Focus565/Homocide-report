@@ -11,4 +11,4 @@ for i in data['Victim Race']:
 bar.title = 'Victim Race in %'
 for i in dic:
     bar.add(i, dic[i])
-bar.render_to_file('img/victim race.svg')
+bar.render_to_file('docs/img/victim race.svg')

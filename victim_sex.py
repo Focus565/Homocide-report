@@ -19,5 +19,5 @@ def sex():
     pie = pygal.Pie(style=DarkStyle,title='Victim Sex', print_values=True)#make pie graph if you want to make other kind of graph google pygal
     for i in victim_sex:
         pie.add(i, victim_sex[i])#in pygal you need to add value to make each pie
-    pie.render_to_file('img/victim_sex.svg')#render it to file
+    pie.render_to_file('docs/img/victim_sex.svg')#render it to file
 sex()

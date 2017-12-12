@@ -9,7 +9,7 @@ def read():
 def relationship():
     '''plot graph of relationship'''
     data = read()
-    homocide_in_relationship = {} #count
+    homicide_in_relationship = {} #count
     data = data[data['Relationship'] != 'Unknown']
     data = data[data['Relationship'] != 'Boyfriend/Girlfriend']
     data[(data['Relationship'] == 'Employee') | (data['Relationship'] == 'Employer')] = 'Work'
@@ -18,16 +18,16 @@ def relationship():
     data[(data['Relationship'] == 'Wife') | (data['Relationship'] == 'Girlfriend') | (data['Relationship'] == 'Ex-Wife') | (data['Relationship'] == 'Common-Law Wife')] = 'FemalePartner'
     print(data['Relationship'].unique())
     for i in data['Relationship']:
-        if i in homocide_in_relationship:
-            homocide_in_relationship[i] += 1
+        if i in homicide_in_relationship:
+            homicide_in_relationship[i] += 1
         else:
-            homocide_in_relationship[i] = 1
+            homicide_in_relationship[i] = 1
 
-    people = sorted(homocide_in_relationship, key=homocide_in_relationship.__getitem__, reverse=True)
-    num = sorted(homocide_in_relationship.values(), reverse=True)
+    people = sorted(homicide_in_relationship, key=homicide_in_relationship.__getitem__, reverse=True)
+    num = sorted(homicide_in_relationship.values(), reverse=True)
 
     bar = pygal.Bar(style=DarkStyle,title='Homicide in Relationship', x_title='Relationship')
     for i in range(len(people)):
         bar.add(people[i], num[i])#in pygal you need to add value to make each bar
-    bar.render_to_file('img/ConcludeRelationship.svg')#render it to file
+    bar.render_to_file('docs/img/ConcludeRelationship.svg')#render it to file
 relationship()

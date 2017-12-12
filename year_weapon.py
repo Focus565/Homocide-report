@@ -10,7 +10,7 @@ def year():
     '''plot graph of year'''
     data = read()
 
-    homocide_in_year = []
+    homicide_in_year = []
     years = []
     weapons = []
     gun_year = []
@@ -27,36 +27,36 @@ def year():
 
 
     for year in data['Year']:
-        homocide_in_year.append(year)
+        homicide_in_year.append(year)
     for weapon in data['Weapon']:
         weapons.append(weapon)
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] in ['Rifle', 'Firearm', 'Shotgun', 'Gun', 'Handgun']:
             gun_year.append(i)
         cout += 1
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] == 'Knife':
             knife_year.append(i)
         cout += 1
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] == 'Blunt Object':
             blunt.append(i)
         cout += 1
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] in ['Strangulation', 'Suffocation', 'Drowning']:
             strangu_suffo.append(i)
         cout += 1
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] == 'Fire':
             fire.append(i)
         cout += 1
     cout = 0
-    for i in homocide_in_year:
+    for i in homicide_in_year:
         if weapons[cout] in ['Drugs', 'Explosives', 'Poison', 'Fall']:
             other.append(i)
         cout += 1
@@ -85,5 +85,5 @@ def year():
     bar.add('Strangulation or Suffocation', strangu_suffo_year)
     bar.add('Fire', fire_year)
     bar.add('Others', other_year)
-    bar.render_to_file('img/year_Weapon.svg')
+    bar.render_to_file('docs/img/year_Weapon.svg')
 year()
