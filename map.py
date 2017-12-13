@@ -17,5 +17,5 @@ def state():
     trc = dict(type='choropleth', text = data['State'].unique(), locations = data['State Code'].unique(), locationmode = 'USA-states', colorscale = 'Reds', z = list(count.values()))
     lyt = dict(geo = dict(scope='usa'))
     mapping = go.Figure(data=[trc], layout=lyt)
-    offline.plot(mapping, filename='img/map.svg')
+    offline.plot(mapping, filename='docs/img/map.html')
 state()
